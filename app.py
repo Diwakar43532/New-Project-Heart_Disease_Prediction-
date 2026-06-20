@@ -49,12 +49,12 @@ if st.button("Predict"):
 
     scaled_input = scaler.transform(input_df)
     if st.button("🔍 Predict"):
-    prediction = model.predict(input_data)
+        prediction = model.predict(input_data)
 
     if prediction == 1:
-    st.error("⚠️ High Risk of Heart Disease")
-else:
-    st.success("✅ Low Risk of Heart Disease")
+        st.error("⚠️ High Risk of Heart Disease")
+    else:
+        st.success("✅ Low Risk of Heart Disease")
 
 st.download_button()
 
