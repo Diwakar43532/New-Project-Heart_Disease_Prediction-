@@ -6,8 +6,10 @@ model = joblib.load('logisticRegresssion_heart.pkl')
 scaler = joblib.load('scaler.pkl')
 expected_columns = joblib.load('columns.pkl')
 
-st.title("Heart stroke prediction by Diwakar")
-st.markdown("Provide the following Details:")
+st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
+
+st.title("❤️ Heart Disease Prediction System")
+st.markdown("### Enter Patient Details")
 
 age = st.slider("Age",18,100,40)
 sex = st.selectbox("SEX", ['M', 'F'])
@@ -46,9 +48,17 @@ if st.button("Predict"):
     input_df = scaler.transform(input_df)
 
     scaled_input = scaler.transform(input_df)
-    prediction = model.predict(scaled_input)[0]
+    if st.button("🔍 Predict"):
+    prediction = model.predict(input_data)
 
     if prediction == 1:
-        st.error("The patient is likely/High Risk to have a heart disease.")
-    else:
-        st.success("The patient is unlikely/Low Risk to have a heart disease.") 
+    st.error("⚠️ High Risk of Heart Disease")
+else:
+    st.success("✅ Low Risk of Heart Disease")
+
+st.download_button()
+
+st.sidebar.title("About")
+st.sidebar.info(
+    "Heart Disease Prediction using Machine Learning"
+)
