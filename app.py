@@ -49,15 +49,15 @@ if st.button("Predict"):
     input_df = scaler.transform(input_df)
 
     scaled_input = scaler.transform(input_df)
-    if st.button("🔍 Predict"):
-        prediction = model.predict(scaled_input)[0]
+    prediction = model.predict(scaled_input)[0]
         
-        if prediction == 1:
-            st.error("⚠️ High Risk of Heart Disease")
-        else:
-            st.success("✅ Low Risk of Heart Disease")
-
-
+     if prediction == 1:
+         st.error("⚠️ High Risk of Heart Disease")
+     else:
+         st.success("✅ Low Risk of Heart Disease")
+            
+        
+            
 st.sidebar.title("About")
 st.sidebar.info(
     "Heart Disease Prediction using Machine Learning ~ By DIWAKAR KUSHWAHA " 
