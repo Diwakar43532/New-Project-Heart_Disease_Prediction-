@@ -61,5 +61,5 @@ st.download_button()
 st.sidebar.title("About")
 st.sidebar.info(
     "Heart Disease Prediction using Machine Learning ~ By DIWAKAR KUSHWAHA " 
-    "Heart Disease Prediction using Machine Learning"
+    
 )
