@@ -8,6 +8,7 @@ expected_columns = joblib.load('columns.pkl')
 
 st.set_page_config(page_title="Heart Disease Predictor", page_icon="❤️")
 
+
 st.title("❤️ Heart Disease Prediction System")
 st.markdown("### Enter Patient Details")
 
@@ -56,7 +57,6 @@ if st.button("Predict"):
     else:
         st.success("✅ Low Risk of Heart Disease")
 
-st.download_button()
 
 st.sidebar.title("About")
 st.sidebar.info(
